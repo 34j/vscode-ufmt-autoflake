@@ -22,7 +22,7 @@ sorter and the code formatter.
 
 [![Install Now](https://img.shields.io/badge/-Install%20Now-107C10?style=for-the-badge&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=mikoz.ufmt-autoflake)
 
-![Example GIF](https://raw.githubusercontent.com/34j/vscode-ufmt-autoflake/main/images/Example1.gif)
+![Example GIF](https://raw.githubusercontent.com/34j/vscode-ufmt-autoflake/main/image/Example1.gif)
 
 Note:
 
