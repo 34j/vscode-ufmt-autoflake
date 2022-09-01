@@ -11,3 +11,5 @@ bundled/libs/
 **/__pycache__
 **/.pytest_cache
 **/.vs
+*.clip
+Icon.png
