@@ -61,7 +61,16 @@ while not EXIT_NOW:
                 black_config = ufmt.util.make_black_config(document_path)
                 usort_config = ufmt.types.UsortConfig.find(document_path)
                 ufmt_result = ufmt.ufmt_bytes(document_path, source_bytes, encoding="utf-8", black_config=black_config, usort_config=usort_config,)
-                result = utils.RunResult(ufmt_result.decode("utf-8"), "")
+                #result = utils.RunResult(ufmt_result.decode("utf-8"), "")
+                import autoflake
+                """result = utils.run_module(
+                    module='autoflake',
+                    argv=['--remove-unused-imports'],
+                    use_stdin=msg["use_stdin"],
+                    cwd=msg["cwd"],
+                    source=ufmt_result.decode("utf-8"),
+                )"""
+                result = utils.RunResult(autoflake.fix_code(ufmt_result.decode("utf-8")), "")
             except Exception:  # pylint: disable=broad-except
                 result = utils.RunResult("", traceback.format_exc(chain=True))
                 is_exception = True

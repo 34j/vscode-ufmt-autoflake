@@ -300,7 +300,19 @@ def _run_tool_on_document(
                     black_config=black_config,
                     usort_config=usort_config,
                 )
-                result = utils.RunResult(ufmt_result.decode("utf-8"), "")
+                # result = utils.RunResult(ufmt_result.decode("utf-8"), "")
+                import autoflake
+       
+                """
+                # this did not work.
+                _result = utils.run_module(
+                    module='autoflake',
+                    argv=['--remove-unused-imports', '--stdout'],
+                    use_stdin=use_stdin,
+                    cwd=cwd,
+                    source=ufmt_result.decode("utf-8"),
+                )"""
+                result = utils.RunResult(autoflake.fix_code(ufmt_result.decode("utf-8")), "")
             except Exception:
                 log_error(traceback.format_exc(chain=True))
                 raise
