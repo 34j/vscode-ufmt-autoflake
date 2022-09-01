@@ -1,5 +1,5 @@
 [tool.attribution]
-name = "vscode-ufmt"
-package = "vscode_ufmt"
+name = "vscode-ufmt-autoflake"
+package = "vscode_ufmt_autoflake"
 signed_tags = true
 version_file = false
