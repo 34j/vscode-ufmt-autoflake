@@ -1,23 +1,23 @@
 {
-    "name": "ufmt",
-    "displayName": "µfmt",
-    "description": "Safe, atomic formatting with black and µsort",
-    "version": "2022.8.5",
+    "name": "ufmt-autoflake",
+    "displayName": "µfmt-autoflake",
+    "description": "Safe, atomic formatting with black and µsort and autoflake",
+    "version": "0.0.1",
     "preview": true,
     "serverInfo": {
-        "name": "ufmt",
-        "module": "ufmt"
+        "name": "ufmt-autoflake",
+        "module": "ufmt-autoflake"
     },
-    "publisher": "omnilib",
+    "publisher": "mikoz",
     "icon": "icon.png",
     "license": "MIT",
-    "homepage": "https://ufmt.omnilib.dev",
+    "homepage": "https://github.com/34j/vscode-ufmt-autoflake.git",
     "repository": {
         "type": "git",
-        "url": "https://github.com/omnilib/ufmt.git"
+        "url": "https://github.com/34j/vscode-ufmt-autoflake.git"
     },
     "bugs": {
-        "url": "https://github.com/omnilib/ufmt/issues"
+        "url": "https://github.com/34j/vscode-ufmt-autoflake.git"
     },
     "galleryBanner": {
         "color": "#1e415e",
@@ -27,13 +27,8 @@
         "python",
         "formatting",
         "import",
-        "imports",
         "sorting",
-        "black",
-        "ufmt",
-        "µfmt",
-        "usort",
-        "µsort"
+        "black"
     ],
     "engines": {
         "vscode": "^1.64.0"
@@ -49,7 +44,7 @@
         "onLanguage:python",
         "workspaceContains:pyproject.toml",
         "workspaceContains:*.py",
-        "onCommand:ufmt.restart"
+        "onCommand:ufmt-autoflake.restart"
     ],
     "main": "./dist/extension.js",
     "scripts": {
@@ -63,12 +58,12 @@
         "lint": "eslint src --ext ts",
         "format-check": "prettier --check 'src/**/*.ts' 'build/**/*.yml' '.github/**/*.yml'",
         "test": "node ./out/test/runTest.js",
-        "vsce-package": "vsce package -o ufmt.vsix"
+        "vsce-package": "vsce package -o ufmt-autoflake.vsix"
     },
     "contributes": {
         "configuration": {
             "properties": {
-                "ufmt.logLevel": {
+                "ufmt-autoflake.logLevel": {
                     "default": "error",
                     "description": "The log level the extension logs at, defaults to 'error'",
                     "enum": [
@@ -81,7 +76,7 @@
                     "scope": "window",
                     "type": "string"
                 },
-                "ufmt.args": {
+                "ufmt-autoflake.args": {
                     "default": [],
                     "description": "Arguments passed in. Each argument is a separate item in the array.",
                     "items": {
@@ -90,30 +85,30 @@
                     "scope": "resource",
                     "type": "array"
                 },
-                "ufmt.path": {
+                "ufmt-autoflake.path": {
                     "default": [],
-                    "description": "When set to a path to ufmt binary, extension will use that. NOTE: Using this option may slowdown server response time.",
+                    "description": "When set to a path to ufmt-autoflake binary, extension will use that. NOTE: Using this option may slowdown server response time.",
                     "scope": "resource",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
                 },
-                "ufmt.importStrategy": {
+                "ufmt-autoflake.importStrategy": {
                     "default": "fromEnvironment",
-                    "description": "Defines where `ufmt` is imported from. This setting may be ignored if `ufmt.path` is set.",
+                    "description": "Defines where `ufmt-autoflake` is imported from. This setting may be ignored if `ufmt-autoflake.path` is set.",
                     "enum": [
                         "useBundled",
                         "fromEnvironment"
                     ],
                     "enumDescriptions": [
-                        "Always use the bundled version of `ufmt`.",
-                        "Use `ufmt` from environment, fallback to bundled version only if `ufmt` not available in the environment."
+                        "Always use the bundled version of `ufmt-autoflake`.",
+                        "Use `ufmt-autoflake` from environment, fallback to bundled version only if `ufmt-autoflake` not available in the environment."
                     ],
                     "scope": "window",
                     "type": "string"
                 },
-                "ufmt.interpreter": {
+                "ufmt-autoflake.interpreter": {
                     "default": [],
                     "description": "When set to a path to python executable, extension will use that to launch the server and any subprocess.",
                     "scope": "window",
@@ -122,7 +117,7 @@
                     },
                     "type": "array"
                 },
-                "ufmt.showNotifications": {
+                "ufmt-autoflake.showNotifications": {
                     "default": "off",
                     "description": "Controls when notifications are shown by this extension.",
                     "enum": [
@@ -145,8 +140,8 @@
         "commands": [
             {
                 "title": "Restart Server",
-                "category": "ufmt",
-                "command": "ufmt.restart"
+                "category": "ufmt-autoflake",
+                "command": "ufmt-autoflake.restart"
             }
         ]
     },
