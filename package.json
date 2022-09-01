@@ -9,7 +9,7 @@
         "module": "ufmt-autoflake"
     },
     "publisher": "mikoz",
-    "icon": "icon.png",
+    "icon": "image/Icon.png",
     "license": "MIT",
     "homepage": "https://github.com/34j/vscode-ufmt-autoflake.git",
     "repository": {
